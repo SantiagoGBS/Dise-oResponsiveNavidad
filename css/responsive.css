@@ -1,0 +1,310 @@
+@media screen and (min-width: 460px) {
+
+    /* Aparece el article header pero no aparece autor (article__data) */
+    .article__header {
+        display: flex;
+        margin-top: 3rem;
+    }
+
+    .article__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article__p {
+        justify-content: justify;
+        width: 60%;
+    }
+
+    .article__data {
+        display: none;
+    }
+
+    .article__footer {
+        display: flex;
+        justify-content: right;
+    }
+
+    .article__footer-text {
+        margin: 0.2rem;
+        padding-right: 5rem;
+    }
+}
+
+@media screen and (min-width: 480px) {
+
+    /* Aparece la imagen de los articulos */
+    .article__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article__body img {
+        display: flex;
+        width: 70%;
+    }
+    .article__header{
+        display: flex;
+        text-align: center;
+    }
+    .article__p {
+        width: 60%;
+    }
+    .article__h2{
+        width: 60%;
+    }
+    .footer{
+        justify-content: center;
+    }
+}
+@media screen and (min-width: 600px) {
+    /* en el article body pasa de columna a row */
+    .article__header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .article__p {
+        width: 90%;
+    }
+    .article__h2{
+        width: 90%;
+    }
+    .article__body {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+    }
+    .article__text{
+        width: 50%;
+    }
+    .article__body img {
+        display: flex;
+        width: 40%;
+    }
+    .article__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        width: 70%;
+    }
+
+}
+@media screen and (min-width: 768px) {
+    /* vuelve a cambiar el orden a columna y se agranda la imagen principal y el texto de debajo
+    ademas, aparece article__data y article__title se desplaza hacia la izquierda y alguna cosilla mas. */
+    .article__header{
+        display: flex;
+        flex-direction: row;
+    }
+    .article__body {
+        display: flex;
+        flex-direction: column;
+    }
+    .article__p {
+        width: 90%;
+    }
+    .article__h2{
+        width: 90%;
+    }
+    .article__text{
+        width: 90%;
+    }
+    .article__body img {
+        display: flex;
+        width: 100%;
+    }
+    .article__title {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 100%;
+    }
+    .article__data{
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        width: 100%;
+    }
+    .article__h2{
+       margin-bottom:0rem;
+    }
+    .article__date{
+        font-weight: bolder;
+    }
+    .header{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+    .header__h1{
+        display: flex;
+        font-size: 1.5rem;
+    }
+    .nav__item{
+        margin: 0.5rem;
+    }
+    .nav__item:hover{
+        animation-name: movertitulo;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+    }
+    @keyframes movertitulo {
+        0%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(1.1);
+        }
+    }
+
+    .nav__list{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    /* Aparece el aside, cambia la estructura del grid del cointaner y aparece un elemento click  */
+    .aside__header{
+        width: 70%;
+    }
+    .container{
+        width: 100%;
+        display: grid;
+        grid-template: "header header" auto
+        "favorites__images favorites__images" 30vh
+        "aside articles" auto
+        "footer footer"
+        1fr;
+    }
+    .aside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .aside img{
+        border-radius: 5%;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .aside img{
+        width:50%
+    }
+    .superior__img{
+        display: flex;
+        width: 10%;
+        position: fixed;
+        z-index: 1;
+        right: 0%;
+        top:8%;
+        background-color: white;
+        height: 10%;
+    }
+    .superior__img:hover{
+        animation-name: moverbola;
+        animation-duration: 0.5s;
+        animation-fill-mode: backwards;
+    }
+    @keyframes moverbola {
+        0%{
+            transform: translateX(-1px);
+        }
+        10%{
+            transform: translateX(-0px);
+        }
+        20%{
+            transform: translateX(-1px);
+        }
+        30%{
+            transform: translateX(-0px);
+        }
+        40%{
+            transform: translateX(-1px);
+        }
+        50%{
+            transform: translateX(-1px);
+        }
+        60%{
+            transform: translateX(-1px);
+        }
+        70%{
+            transform: translateX(-0px);
+        }
+        80%{
+            transform: translateX(-1px);
+        }
+        90%{
+            transform: translateX(-0px);
+        }
+        100%{
+            transform: translateX(-1px);
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    /* desaparece elemento click, cambia estructura container del grid y cambia el nav a posicion vertical (y primera columna del container) */
+    .container{
+        width: 100%;
+        display: grid;
+        grid-template:
+        "header aside articles" auto
+        "footer footer footer"
+        1fr;
+    }
+    .superior__img{
+        display: none;
+    }
+    .nav__list{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .nav__item{
+        border-bottom: 1px solid grey;
+    }
+    .header__h1{
+        display: none;
+    }
+    .articles{
+        display: flex;
+        flex-direction: column;
+        align-items:baseline;
+        
+    }
+    .article{
+        border: 1px solid grey;
+    }
+    .article__header{
+        border-bottom: 1px solid grey;
+       
+    }
+    .article__title{
+        border-right: 1px solid grey ;
+    }
+    .footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid grey;
+    }
+    .nav__item:hover{
+        animation-name: movertitulo2;
+        animation-duration: 0.5s;
+        animation-fill-mode: backwards;
+    }
+    @keyframes movertitulo2 {
+        0%{
+            transform: translateX(0px);
+        }
+        100%{
+            transform: translateX(20px);
+        }
+    }
+}

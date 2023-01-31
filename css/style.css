@@ -1,0 +1,148 @@
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template: "header" auto
+    "articles" auto
+    "footer"
+    1fr;
+}
+body{
+    font-family: "Raleway", sans-serif;
+    color: rgb(66, 66, 66);
+}
+body img:hover{
+    animation-name: moverimagen;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    
+}
+@keyframes moverimagen {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.04);
+    }
+}
+.header{
+    grid-area: header;
+    background-color: white;
+    width: 100%;
+    margin-top: 0rem;
+}
+.header__h1{
+    display: none;
+}
+/* ----NAV---- */
+.nav__list{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-bottom: 1rem;
+    top:0%
+}
+.nav__link{
+    text-decoration: none;
+    color: black; 
+}
+.nav__link:hover{
+    color: red;
+}
+/* ----Favorites---- */
+.favorites{
+    display: none;
+    
+}
+.prueba img{
+        width: 20%;
+}
+.favorites__images{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    animation-name: moverimagenbola;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    top:10%;
+    grid-area: favorites;
+}
+@keyframes moverimagenbola{
+    0%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(20rem);
+    }
+}
+.favorites__cambio{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    animation-name: quitarimagenbola;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    top:10%;
+    grid-area: favorites;
+}
+@keyframes quitarimagenbola{
+    0%{
+        transform: translateX(15rem);
+    }
+    100%{
+        transform: translateX(-500px);
+    }
+}
+.favorites__images img{
+    width: 100%;
+    border-radius: 10%;
+}
+.favorites__text{
+    display: none;
+}
+.favorites__container{
+    margin: 1rem;
+}
+
+/* -----ASIDE----- */
+.aside{
+    display: none;
+}
+.article__header{
+    display: none;
+    border-bottom: 1px solid grey;
+}
+.article__body img{
+    display: none;
+}
+.article__body{
+    margin: 2rem;
+    text-align: justify;
+}
+.article__footer{
+    display: none;
+}
+.superior__img{
+    display: none;
+}
+/* ----CARDS---- */
+/* MAIN */
+.articles{
+    grid-area: articles;
+}
+/* ------FOOTER */
+.footer{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 0.8rem;
+    grid-area: footer;
+}
+.footer__textcolor {
+    color: crimson;
+}
+.nav__link--red{
+    color: crimson;
+}
+/* -------------------------------- */
+
+
